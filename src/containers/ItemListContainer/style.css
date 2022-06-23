@@ -1,0 +1,25 @@
+.btn {
+	margin: auto;
+	font-size: large;
+	font-weight: bold;
+	text-align: center;
+	border-radius: 20px;
+	border-color: #06283d;
+	padding: 10px;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+
+p {
+	text-align: center;
+	color: black;
+	font-size: 20px;
+	font-style: initial;
+}
+
+.container {
+	width: 50%;
+	text-align: center;
+	margin: auto;
+	padding: 10px;
+}

@@ -1,0 +1,38 @@
+.containerCarrito {
+	width: 45%;
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid;
+	border-color: rgb(247, 247, 247);
+	border-radius: 3px;
+	background-color: #47b5ff;
+}
+
+.btnCarrito {
+	width: 100%;
+	background-color: white;
+	font-size: 20px;
+	font-weight: bold;
+	border: 1px solid #000;
+	border-radius: 5px;
+	margin: 0 auto;
+}
+
+.agregarCarrito {
+	width: 100%;
+	font-size: 15px;
+	border: 1px solid #000;
+	border-radius: 5px;
+	margin: 0 auto;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.agregarCarrito:hover {
+	background-color: #cbd5d0;
+}
+
+.stock {
+	text-transform: uppercase;
+	font-weight: bold;
+}
