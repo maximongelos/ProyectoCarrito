@@ -37,9 +37,9 @@ const ItemCount = ({initialStock}) => {
 
 	return (
 		<>
-			<div className="containerCarrito">
+			<div className="container-carrito">
 				<p className="stock">Stock Disponible : {stock}</p>
-				<div className="btnCarrito">
+				<div className="btn-carrito">
 					<IoIosRemove
 						onClick={onDecrement}
 						style={{marginRight: '75px', cursor: 'pointer'}}
@@ -51,7 +51,7 @@ const ItemCount = ({initialStock}) => {
 					/>
 				</div>
 				<br />
-				<button className="agregarCarrito" onClick={handleAdd}>
+				<button className="agregar-carrito" onClick={handleAdd}>
 					Agregar al carrito
 				</button>
 			</div>

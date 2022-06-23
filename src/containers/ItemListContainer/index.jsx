@@ -6,19 +6,19 @@ import ItemCount from '../../components/ItemCount';
 
 const ItemListContainer = ({greating}) => {
 	const [color, setColor] = useState('Blue');
-	const [colorFuente, setColorFuente] = useState('white');
+	const [colorFont, setColorFont] = useState('white');
 	const [count, setCount] = useState({clicks: 0, fecha: '-'});
 
-	const cambiarColor = () => {
+	const handleColor = () => {
 		const fecha = new Date().toLocaleTimeString();
 
 		if (color === 'Blue') {
 			setColor('Red');
-			setColorFuente('black');
+			setColorFont('black');
 			setCount({clicks: count.clicks + 1, fecha: fecha});
 		} else {
 			setColor('Blue');
-			setColorFuente('white');
+			setColorFont('white');
 			setCount({clicks: count.clicks + 1, fecha: fecha});
 		}
 	};
@@ -30,15 +30,15 @@ const ItemListContainer = ({greating}) => {
 	return (
 		<>
 			<div style={{backgroundColor: color}} className="container">
-				<p style={{color: colorFuente}}>{greating}</p>
+				<p style={{color: colorFont}}>{greating}</p>
 				<ItemCount initialStock={10} />
 				<hr />
-				<button className="btn" onClick={cambiarColor}>
+				<button className="btn-color" onClick={handleColor}>
 					Cambiar Color
 				</button>
 				<br />
-				<p style={{color: colorFuente}}>Veces clickeado: {count.clicks}</p>
-				<p style={{color: colorFuente}}>Ultima vez clickeado: {count.fecha}</p>
+				<p style={{color: colorFont}}>Veces clickeado: {count.clicks}</p>
+				<p style={{color: colorFont}}>Ultima vez clickeado: {count.fecha}</p>
 			</div>
 		</>
 	);

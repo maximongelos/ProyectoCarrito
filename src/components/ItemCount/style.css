@@ -1,4 +1,4 @@
-.containerCarrito {
+.container-carrito {
 	width: 45%;
 	margin: 0 auto;
 	padding: 10px;
@@ -8,7 +8,7 @@
 	background-color: #47b5ff;
 }
 
-.btnCarrito {
+.btn-carrito {
 	width: 100%;
 	background-color: white;
 	font-size: 20px;
@@ -18,7 +18,7 @@
 	margin: 0 auto;
 }
 
-.agregarCarrito {
+.agregar-carrito {
 	width: 100%;
 	font-size: 15px;
 	border: 1px solid #000;
@@ -28,7 +28,7 @@
 	cursor: pointer;
 }
 
-.agregarCarrito:hover {
+.agregar-carrito:hover {
 	background-color: #cbd5d0;
 }
 
