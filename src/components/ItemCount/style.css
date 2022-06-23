@@ -3,9 +3,9 @@
 	margin: 0 auto;
 	padding: 10px;
 	border: 1px solid;
-	border-color: rgb(247, 247, 247);
+	border-color: rgb(0, 0, 0);
 	border-radius: 3px;
-	background-color: #47b5ff;
+	background-color: #dddddd;
 }
 
 .btn-carrito {
