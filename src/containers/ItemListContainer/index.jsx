@@ -31,7 +31,7 @@ const ItemListContainer = ({greating}) => {
 		<>
 			<div style={{backgroundColor: color}} className="container">
 				<p style={{color: colorFont}}>{greating}</p>
-				<ItemCount initialStock={10} />
+				<ItemCount initialStock={10} initial={1} />
 				<hr />
 				<button className="btn-color" onClick={handleColor}>
 					Cambiar Color

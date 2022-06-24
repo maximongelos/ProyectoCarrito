@@ -4,8 +4,8 @@ import './style.css';
 import {GrFormAdd} from 'react-icons/gr';
 import {IoIosRemove} from 'react-icons/io';
 
-const ItemCount = ({initialStock}) => {
-	const [count, setCount] = useState(0);
+const ItemCount = ({initialStock, initial}) => {
+	const [count, setCount] = useState(initial);
 	const [stock, setStock] = useState(initialStock);
 
 	const onAdd = () => {
@@ -21,7 +21,7 @@ const ItemCount = ({initialStock}) => {
 		if (stock === 0) {
 			alert('No hay mas articulos en stock');
 			return;
-		} else if (count === 0) {
+		} else if (count === initial) {
 			alert('Aun no se agregaron articulos al carrito');
 			return;
 		} else {
@@ -31,8 +31,10 @@ const ItemCount = ({initialStock}) => {
 
 	const handleAdd = (e) => {
 		e.preventDefault();
-		setStock(stock - count);
-		setCount(0);
+		if (stock > 0) {
+			setStock(stock - count);
+			setCount(initial);
+		}
 	};
 
 	return (
