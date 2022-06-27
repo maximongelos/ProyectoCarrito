@@ -1,0 +1,15 @@
+.container-card {
+	width: 100%;
+	max-width: 1200px;
+	height: 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin: auto;
+}
+
+.title {
+	font-size: xx-large;
+	text-align: center;
+	color: black;
+}
