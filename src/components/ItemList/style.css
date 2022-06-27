@@ -5,11 +5,13 @@
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	margin: auto;
+	margin: 0 auto;
 }
 
 .title {
 	font-size: xx-large;
+	font-weight: 400;
 	text-align: center;
 	color: black;
+	text-transform: uppercase;
 }

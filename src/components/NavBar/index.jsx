@@ -5,16 +5,18 @@ import CardWidget from '../CardWidget';
 const NavBar = () => {
 	return (
 		<>
-			<nav className="navbar">
-				<li className="titulo-navbar">Proyecto Carrito</li>
-				<ul>
-					<li>Inicio</li>
-					<li>Nosotros</li>
-					<li>Productos</li>
-					<li>Contacto</li>
+			<header>
+				<div className="titulo">
+					<a href="#">Proyecto Carrito</a>
+				</div>
+				<nav>
+					<a href="#">Inicio</a>
+					<a href="#">Nosotros</a>
+					<a href="#">Productos</a>
+					<a href="#">Contacto</a>
 					<CardWidget />
-				</ul>
-			</nav>
+				</nav>
+			</header>
 		</>
 	);
 };

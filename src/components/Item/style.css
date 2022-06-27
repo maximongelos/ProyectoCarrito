@@ -1,4 +1,4 @@
-.container-card .card {
+.card {
 	width: 330px;
 	height: 430px;
 	border-radius: 8px;
@@ -10,31 +10,30 @@
 	background-color: #ffffff;
 }
 
-.container-card .card:hover {
+.card:hover {
 	transform: translateY(-15px);
 	box-shadow: 0 12px 16px rgba(0, 0, 0, 0.2);
 }
 
-.container-card .card img {
-	width: 300px;
-	height: 220px;
-	border-radius: 3px;
+.card img {
+	width: 200px;
+	height: 200px;
 }
 
-.container-card .card h4 {
+.card h4 {
 	font-weight: 600;
 }
-.container-card .card h5 {
+.card h5 {
 	font-weight: 400;
 }
 
-.container-card .card p {
+.card p {
 	padding: 0 1rem;
 	font-size: 12px;
 	font-weight: 300;
 }
 
-.container-card .card a {
+.card a {
 	font-weight: 500;
 	text-decoration: none;
 	color: #8cc0de;

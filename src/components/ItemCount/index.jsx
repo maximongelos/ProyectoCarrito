@@ -22,34 +22,31 @@ const ItemCount = ({initialStock, initial}) => {
 
 	return (
 		<>
-			<div className="container-carrito">
-				<p className="stock">Stock Disponible : {stock}</p>
-				<div className="btn-carrito">
-					<button
-						disabled={count === initial ? true : null}
-						onClick={() => addProduct(-1)}
-						className="btn"
-					>
-						-
-					</button>
-					{count}
-					<button
-						disabled={count === stock ? true : null}
-						onClick={() => addProduct(1)}
-						className="btn"
-					>
-						+
-					</button>
-				</div>
-				<br />
+			<div className="btn-carrito">
 				<button
-					disabled={stock === 0 ? true : null}
-					className="agregar-carrito"
-					onClick={handleAdd}
+					disabled={count === initial ? true : null}
+					onClick={() => addProduct(-1)}
+					className="btn"
 				>
-					Agregar al carrito
+					-
+				</button>
+				{count}
+				<button
+					disabled={count === stock ? true : null}
+					onClick={() => addProduct(1)}
+					className="btn"
+				>
+					+
 				</button>
 			</div>
+			<br />
+			<button
+				disabled={stock === 0 ? true : null}
+				className="agregar-carrito"
+				onClick={handleAdd}
+			>
+				Agregar al carrito
+			</button>
 		</>
 	);
 };
