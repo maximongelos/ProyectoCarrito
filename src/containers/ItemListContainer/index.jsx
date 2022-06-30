@@ -3,7 +3,6 @@ import {useState, useEffect} from 'react';
 import ItemList from '../../components/ItemList';
 import './style.css';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-
 import {TailSpin} from 'react-loader-spinner';
 
 const ItemListContainer = () => {

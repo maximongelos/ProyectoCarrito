@@ -1,10 +1,13 @@
 .btn-carrito {
-	width: 90%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	width: 50%;
 	font-size: 15px;
-	font-weight: bold;
 	border: 1px solid #000;
 	border-radius: 5px;
-	margin: 0 auto;
+	padding: 1px;
+	cursor: pointer;
 }
 
 .btn {
@@ -12,16 +15,16 @@
 	font-size: 20px;
 	font-weight: bold;
 	background-color: white;
-	padding: 5px 50px;
+	padding: 5px 30px;
+	margin: 0 auto;
 	cursor: pointer;
 }
 
 .agregar-carrito {
-	width: 90%;
+	width: 50%;
 	font-size: 15px;
 	border: 1px solid #000;
 	border-radius: 5px;
-	margin: 0 auto;
 	padding: 10px;
 	cursor: pointer;
 }
