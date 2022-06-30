@@ -8,7 +8,7 @@ const Item = ({producto}) => {
 				<img src={producto.image} alt="imagen" />
 				<h4>{producto.title}</h4>
 				<h5>USD {producto.price}</h5>
-				<a href={() => false}>Leer más</a>
+				<a href={() => false}>Ver más</a>
 			</div>
 		</>
 	);

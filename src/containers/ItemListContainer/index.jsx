@@ -2,12 +2,15 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import ItemList from '../../components/ItemList';
 import './style.css';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+
+import {TailSpin} from 'react-loader-spinner';
 
 const ItemListContainer = () => {
-	const [productos, setProductos] = useState(null);
+	const [productos, setProductos] = useState([]);
 
 	useEffect(() => {
-		const url = '/mocks/data.json';
+		const url = 'https://fakestoreapi.com/products?limit=7';
 
 		const getProductos = async () => {
 			try {
@@ -25,7 +28,15 @@ const ItemListContainer = () => {
 	return (
 		<>
 			<div className="container">
-				{productos ? <ItemList productos={productos} /> : null}
+				{productos.length ? (
+					<ItemList productos={productos} />
+				) : (
+					<TailSpin
+						className="spinner"
+						ariaLabel="loading-indicator"
+						color="#000"
+					/>
+				)}
 			</div>
 		</>
 	);

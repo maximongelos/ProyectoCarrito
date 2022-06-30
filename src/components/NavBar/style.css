@@ -12,10 +12,19 @@ a {
 	color: black;
 }
 
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img {
+	height: 75px;
+	margin-right: 10px;
+}
+
 .titulo {
 	text-transform: uppercase;
 	font-weight: 400;
-	font-size: 22px;
 }
 
 nav a {
