@@ -2,8 +2,7 @@ import React from 'react';
 import {useState, useEffect} from 'react';
 import './style.css';
 import ItemDetail from '../../components/ItemDetail';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import {TailSpin} from 'react-loader-spinner';
+import Spinner from '../../components/Spinner';
 
 const ItemDetailContainer = () => {
 	const [productDetail, setProductDetail] = useState({});
@@ -30,11 +29,7 @@ const ItemDetailContainer = () => {
 				{Object.keys(productDetail).length !== 0 ? (
 					<ItemDetail product={productDetail} />
 				) : (
-					<TailSpin
-						className="spinner"
-						ariaLabel="loading-indicator"
-						color="#000"
-					/>
+					<Spinner />
 				)}
 			</div>
 		</>

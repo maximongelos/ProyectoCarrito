@@ -1,6 +1,5 @@
 import React from 'react';
 import './style.css';
-import ItemCount from '../ItemCount';
 
 const ItemDetail = ({product}) => {
 	return (
@@ -12,9 +11,6 @@ const ItemDetail = ({product}) => {
 				<h3>{product.title}</h3>
 				<p>$ {product.price}</p>
 				<p>{product.description}</p>
-				<div className="item-count">
-					<ItemCount initialStock={10} initial={1} />
-				</div>
 			</div>
 		</div>
 	);

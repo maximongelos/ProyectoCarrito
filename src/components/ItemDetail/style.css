@@ -1,9 +1,10 @@
 .container-detail {
 	display: flex;
 	justify-content: space-between;
-	width: 80%;
+	align-items: flex-start;
+	width: 75%;
 	margin: 0 auto;
-	padding: 20px;
+	padding-top: 25px;
 }
 
 .imagen-detail {
@@ -35,10 +36,6 @@ p {
 
 h3 {
 	text-transform: uppercase;
-}
-
-.item-count {
-	width: 100%;
 }
 
 @media (max-width: 768px) {
