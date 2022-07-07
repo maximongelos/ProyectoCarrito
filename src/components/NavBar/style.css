@@ -27,14 +27,18 @@ a {
 	font-weight: 400;
 }
 
-nav a {
+.nav-container {
+	width: 100%;
+}
+
+nav ul li {
+	display: inline;
 	font-weight: 400;
 	padding-right: 10px;
 }
 
 nav a:hover {
 	color: #f0f0f0;
-	text-decoration-line: underline;
 }
 
 @media (max-width: 768px) {

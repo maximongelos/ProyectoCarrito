@@ -16,3 +16,40 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.container-category {
+	margin: 2rem 1.5rem;
+	display: flex;
+	justify-content: space-evenly;
+	text-transform: uppercase;
+}
+
+.container-category div {
+	letter-spacing: 2px;
+	text-decoration: none;
+	color: #333;
+	font-size: 1.5rem;
+	position: relative;
+	cursor: pointer;
+	padding: 10px;
+	text-align: center;
+}
+.container-category div:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	height: 2px;
+	width: 100%;
+	background: #f4bfbf;
+	/*animacion de derecha a izquierda*/
+	transform-origin: right;
+	transform: scaleX(0);
+	transition: transform 0.2s ease-in-out;
+}
+.container-category div:hover:after {
+	/*animacion de derecha a izquierda*/
+	transform-origin: left;
+	transform: scaleX(1);
+}

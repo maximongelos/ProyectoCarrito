@@ -3,12 +3,15 @@ import {useState, useEffect} from 'react';
 import './style.css';
 import ItemDetail from '../../components/ItemDetail';
 import Spinner from '../../components/Spinner';
+import {useParams} from 'react-router-dom';
 
 const ItemDetailContainer = () => {
 	const [productDetail, setProductDetail] = useState({});
 
+	const params = useParams();
+
 	useEffect(() => {
-		const url = 'https://fakestoreapi.com/products/4';
+		const url = `https://fakestoreapi.com/products/${params.productId}`;
 
 		const getItem = async () => {
 			try {
@@ -21,7 +24,7 @@ const ItemDetailContainer = () => {
 		};
 
 		getItem();
-	}, []);
+	}, [params]);
 
 	return (
 		<>
