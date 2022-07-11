@@ -1,13 +1,11 @@
 import React from 'react';
 import Item from '../Item';
-import './style.css';
 
 const ItemList = ({productos}) => {
 	return (
 		<>
-			{/* <h3 className="title">Productos</h3> */}
 			<ul>
-				<div className="container-card">
+				<div className="flex flex-wrap justify-center max-w-1200 mx-0 my-auto cursor-pointer">
 					{productos.map((producto) => {
 						return <Item producto={producto} key={producto.id} />;
 					})}

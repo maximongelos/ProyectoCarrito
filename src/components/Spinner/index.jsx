@@ -1,17 +1,12 @@
 import React from 'react';
-import './style.css';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import {TailSpin} from 'react-loader-spinner';
 
 const Spinner = () => {
 	return (
 		<>
-			<div className="spinner">
-				<TailSpin
-					className="spinner"
-					ariaLabel="loading-indicator"
-					color="#000"
-				/>
+			<div className="mt-24 mx-auto mb-0 w-20 text-center">
+				<TailSpin ariaLabel="loading-indicator" color="#000" />
 			</div>
 		</>
 	);

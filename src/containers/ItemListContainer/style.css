@@ -1,39 +1,3 @@
-.container {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	font-family: sans-serif;
-	letter-spacing: 0.03em;
-	line-height: 1.6;
-}
-
-.spinner {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-.container-category {
-	margin: 2rem 1.5rem;
-	display: flex;
-	justify-content: space-evenly;
-	text-transform: uppercase;
-}
-
-.container-category div {
-	letter-spacing: 2px;
-	text-decoration: none;
-	color: #333;
-	font-size: 1.5rem;
-	position: relative;
-	cursor: pointer;
-	padding: 10px;
-	text-align: center;
-}
 .container-category div:after {
 	content: '';
 	position: absolute;

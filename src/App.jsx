@@ -1,4 +1,3 @@
-import './App.css';
 import NavBar from './components/NavBar';
 import {BrowserRouter} from 'react-router-dom';
 import {Routes, Route} from 'react-router-dom';
@@ -10,7 +9,7 @@ import Home from './components/Home';
 function App() {
 	return (
 		<BrowserRouter>
-			<div className="App">
+			<div className="w-full h-screen bg-white ">
 				<NavBar />
 				<Routes>
 					<Route path="/" element={<Home />} />
