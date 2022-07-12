@@ -15,6 +15,7 @@ module.exports = {
 		},
 		colors: {
 			rosa: '#f4bfbf',
+			rosaFuerte: '#F9A0A0',
 			gris: '#f0f0f0',
 			blanco: '#ffffff',
 			negro: '#000000',

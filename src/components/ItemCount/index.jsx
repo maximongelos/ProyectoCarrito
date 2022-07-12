@@ -11,8 +11,6 @@ const ItemCount = ({initial, initialStock, onConfirm}) => {
 	const handleConfirm = () => {
 		if (count <= initialStock) {
 			onConfirm(count);
-		} else {
-			alert('No puede superar el stock');
 		}
 	};
 

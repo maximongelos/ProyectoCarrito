@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../../assets/DuoShowroom.png';
+import logo from '../../assets/DuoShowRooom.png';
 import {IoIosMenu} from 'react-icons/io';
 import CardWidget from '../CardWidget';
 
@@ -14,9 +14,6 @@ const NavBar = () => {
 						src={logo}
 						alt="logo"
 					/>
-					<h2 className="uppercase font-normal tablet:hidden cel:hidden">
-						Dúo Showroom
-					</h2>
 				</Link>
 				<div className=" px-4 cursor-pointer desktop:hidden">
 					<IoIosMenu className=" h-10 w-10" />

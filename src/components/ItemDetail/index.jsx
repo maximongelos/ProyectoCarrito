@@ -38,7 +38,7 @@ const ItemDetail = ({product}) => {
 				<p className="w-10/12 text-base text-justify pb-3 tablet:text-center cel:text-center">
 					{product.description}
 				</p>
-				{qtyAdded === 0 ? (
+				{!qtyAdded ? (
 					<ItemCount
 						initialStock={product.stock}
 						initial={1}
