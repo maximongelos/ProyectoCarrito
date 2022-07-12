@@ -9,7 +9,7 @@ import Home from './components/Home';
 function App() {
 	return (
 		<BrowserRouter>
-			<div className="w-full h-screen bg-white ">
+			<div className="w-full h-screen bg-blanco font-poppins">
 				<NavBar />
 				<Routes>
 					<Route path="/" element={<Home />} />

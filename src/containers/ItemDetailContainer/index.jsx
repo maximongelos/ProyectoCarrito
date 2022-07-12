@@ -1,6 +1,5 @@
 import React from 'react';
 import {useState, useEffect} from 'react';
-import './style.css';
 import ItemDetail from '../../components/ItemDetail';
 import Spinner from '../../components/Spinner';
 import {useParams} from 'react-router-dom';
@@ -28,13 +27,11 @@ const ItemDetailContainer = () => {
 
 	return (
 		<>
-			<div className="container">
-				{Object.keys(productDetail).length !== 0 ? (
-					<ItemDetail product={productDetail} />
-				) : (
-					<Spinner />
-				)}
-			</div>
+			{Object.keys(productDetail).length !== 0 ? (
+				<ItemDetail product={productDetail} />
+			) : (
+				<Spinner />
+			)}
 		</>
 	);
 };

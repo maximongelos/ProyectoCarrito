@@ -23,30 +23,27 @@ const NavBar = () => {
 				</div>
 				<div className="flex justify-between pr-8 tablet:hidden cel:hidden">
 					<div>
-						<Link
-							to="/"
-							className=" font-normal p-2 uppercase hover:text-blanco"
-						>
+						<Link to="/" className=" font-normal p-2 uppercase hover:text-gris">
 							Inicio
 						</Link>
 
 						<Link
 							to="/nosotros"
-							className=" font-normal p-2 uppercase hover:text-blanco"
+							className=" font-normal p-2 uppercase hover:text-gris"
 						>
 							Nosotros
 						</Link>
 
 						<Link
 							to="/productos"
-							className=" font-normal p-2 uppercase hover:text-blanco"
+							className=" font-normal p-2 uppercase hover:text-gris"
 						>
 							Productos
 						</Link>
 
 						<Link
 							to="/contacto"
-							className=" font-normal p-2 uppercase hover:text-blanco"
+							className=" font-normal p-2 uppercase hover:text-gris"
 						>
 							Contacto
 						</Link>

@@ -12,12 +12,16 @@ const Item = ({producto}) => {
 	return (
 		<>
 			<div
-				className="card w-330 h-400 rounded-lg shadow-sm overflow-hidden m-5 text-center transition-all duration-300 bg-white"
+				className="card flex flex-col justify-center items-center w-80 h-96 rounded-lg shadow-sm overflow-hidden m-5 text-center transition-all duration-300 bg-white"
 				onClick={handleDetail}
 			>
-				<img className="w-36 h-36" src={producto.image} alt="imagen" />
-				<h4 className="font-normal">{producto.title}</h4>
-				<h5 className="font-semibold">$ {producto.price}</h5>
+				<img
+					className="w-48 h-48 text-center"
+					src={producto.image}
+					alt="imagen"
+				/>
+				<h4 className="font-normal p-2">{producto.title}</h4>
+				<h5 className="font-semibold p-2">$ {producto.price}</h5>
 			</div>
 		</>
 	);

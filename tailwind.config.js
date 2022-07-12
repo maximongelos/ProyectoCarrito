@@ -2,22 +2,22 @@
 module.exports = {
 	content: ['index.html', './src/**/*.jsx'],
 	theme: {
-		extend: {},
+		extend: {
+			fontFamily: {
+				poppins: "'Poppins', sans-serif",
+			},
+		},
 		minHeight: {
 			70: '70px',
 		},
 		maxWidth: {
 			1200: '1200px',
 		},
-		width: {
-			330: '330px',
-		},
-		height: {
-			400: '400px',
-		},
 		colors: {
 			rosa: '#f4bfbf',
-			blanco: '#f0f0f0',
+			gris: '#f0f0f0',
+			blanco: '#ffffff',
+			negro: '#000000',
 		},
 		screens: {
 			cel: {max: '479px'},
