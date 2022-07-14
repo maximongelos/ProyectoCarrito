@@ -16,7 +16,7 @@ const ItemCount = ({initial, initialStock, onConfirm}) => {
 
 	return (
 		<>
-			<div className="flex justify-center text-center text-sm border-2 w-1/2 rounded-md p-2 cursor-pointer tablet:w-3/5 cel:w-3/5">
+			<div className="flex justify-center text-center text-sm border-2 w-1/2 rounded-md p-2 cursor-pointer tablet:w-9/12 cel:w-11/12">
 				<button
 					disabled={count === initial ? true : null}
 					onClick={() => addProduct(-1)}
@@ -36,7 +36,7 @@ const ItemCount = ({initial, initialStock, onConfirm}) => {
 			<br />
 			<button
 				disabled={initialStock === 0 ? true : null}
-				className="flex justify-center text-center text-sm border-2 w-1/2 rounded-md p-2 cursor-pointer uppercase hover:bg-gris tablet:w-3/5 cel:w-3/5"
+				className="flex justify-center text-center text-sm border-2 w-1/2 rounded-md p-2 cursor-pointer uppercase hover:bg-gris tablet:w-9/12 cel:w-11/12"
 				onClick={handleConfirm}
 			>
 				Agregar al carrito

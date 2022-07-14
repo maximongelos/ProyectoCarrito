@@ -12,7 +12,7 @@ const Item = ({producto}) => {
 	return (
 		<>
 			<div
-				className="card flex flex-col justify-center items-center w-80 h-96 rounded-lg shadow-sm overflow-hidden m-5 text-center transition-all duration-300 bg-white"
+				className="card flex flex-col justify-center items-center w-80 h-96 rounded-lg shadow-lg overflow-hidden m-5 text-center transition-all duration-300 bg-white"
 				onClick={handleDetail}
 			>
 				<img

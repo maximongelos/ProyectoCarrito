@@ -60,18 +60,15 @@ const ItemListContainer = () => {
 		<>
 			<div className="flex flex-col justify-center items-center tracking-wide leading-6">
 				<div className="m-7 flex justify-evenly uppercase container-category">
-					{categorias.map((categoria) => {
-						return (
-							<>
-								<div
-									className="text-2xl no-underline relative cursor-pointer text-center text-black p-2.5 tablet:text-lg cel:text-base"
-									onClick={() => handleCategory(categoria)}
-								>
-									{categoria}
-								</div>
-							</>
-						);
-					})}
+					{categorias.map((categoria) => (
+						<div
+							className="text-2xl no-underline relative cursor-pointer text-center text-black p-2.5 tablet:text-lg cel:text-base justify"
+							onClick={() => handleCategory(categoria)}
+							key={categoria}
+						>
+							{categoria}
+						</div>
+					))}
 				</div>
 
 				{productos.length ? <ItemList productos={productos} /> : <Spinner />}

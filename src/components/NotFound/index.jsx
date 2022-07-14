@@ -10,7 +10,7 @@ const NotFound = () => {
 				to="/"
 				className="bg-rosa text-blanco py-3 px-6 rounded-3xl text-sm uppercase hover:bg-rosaFuerte"
 			>
-				Volver al Inicio{' '}
+				Volver al Inicio
 			</Link>
 		</div>
 	);

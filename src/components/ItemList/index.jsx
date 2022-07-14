@@ -6,9 +6,9 @@ const ItemList = ({productos}) => {
 		<>
 			<ul>
 				<div className="flex flex-wrap justify-center max-w-1200 mx-0 my-auto cursor-pointer">
-					{productos.map((producto) => {
-						return <Item producto={producto} key={producto.id} />;
-					})}
+					{productos.map((producto) => (
+						<Item producto={producto} key={producto.id} />
+					))}
 				</div>
 			</ul>
 		</>
