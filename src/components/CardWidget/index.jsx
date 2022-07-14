@@ -31,8 +31,8 @@ const CardWidget = () => {
 			</svg>
 			<div>
 				{cart.length > 0 ? (
-					<div className="w-4 h-4 bg-blanco rounded-full text-center">
-						<span className="block text-xs font-bold">{cart.length}</span>
+					<div className="w-4 h-4 bg-blanco rounded-full text-negro text-xs font-bold text-center">
+						<span>{cart.length}</span>
 					</div>
 				) : null}
 			</div>
