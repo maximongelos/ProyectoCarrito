@@ -6,6 +6,9 @@ export const Shop = createContext();
 
 const ShopProvider = ({children}) => {
 	const [cart, setCart] = useState([]);
+	const [totalPrice, setTotalPrice] = useState(0);
+
+	let precioFinal = 0;
 
 	const addItem = (producto, cantidad) => {
 		const productoRepetido = isInCart(producto.id);
@@ -22,11 +25,16 @@ const ShopProvider = ({children}) => {
 
 	const removeItem = (id) => {
 		const cartUpdate = cart.filter((elemento) => elemento.id !== id);
+		cartUpdate.forEach((producto) => {
+			precioFinal += producto.quantity * producto.price;
+		});
 		setCart(cartUpdate);
+		setTotalPrice(precioFinal);
 	};
 
 	const clear = () => {
 		setCart([]);
+		setTotalPrice(0);
 	};
 
 	const isInCart = (id) => {
@@ -34,7 +42,9 @@ const ShopProvider = ({children}) => {
 	};
 
 	return (
-		<Shop.Provider value={{addItem, cart, removeItem, clear}}>
+		<Shop.Provider
+			value={{addItem, cart, removeItem, clear, setTotalPrice, totalPrice}}
+		>
 			{children}
 		</Shop.Provider>
 	);

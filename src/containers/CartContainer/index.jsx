@@ -1,9 +1,17 @@
 import React from 'react';
 import {useContext} from 'react';
+import {useNavigate} from 'react-router-dom';
 import {Shop} from '../../context/ShopContext';
 
 const Cart = () => {
-	const {cart, removeItem, clear} = useContext(Shop);
+	const {cart, removeItem, clear, setTotalPrice, totalPrice} = useContext(Shop);
+	let precioFinal = 0;
+
+	const navigate = useNavigate();
+
+	const handleCheckout = (precioTotal) => {
+		navigate('/checkout');
+	};
 
 	return (
 		<div className="flex flex-col justify-center items-center w-full">
@@ -31,6 +39,8 @@ const Cart = () => {
 							<tbody>
 								{cart.map((producto) => {
 									let precioTotal = producto.price * producto.quantity;
+									precioFinal += precioTotal;
+									setTotalPrice(precioFinal);
 									return (
 										<tr>
 											<td className="w-1/12 text-center">
@@ -40,13 +50,13 @@ const Cart = () => {
 													alt={producto.title}
 												/>
 											</td>
-											<td className=" w-2/12 text-center text-gray-800 mb-1 text-lg font-normal uppercase justify tablet:text-sm cel:text-xs">
+											<td className=" w-2/12 text-center mb-1 text-lg font-normal uppercase justify tablet:text-sm cel:text-xs">
 												{producto.title}
 											</td>
-											<td className=" w-2/12 text-center text-primary text-lg font-bold tablet:text-sm cel:text-xs">
+											<td className=" w-2/12 text-center text-lg font-bold tablet:text-sm cel:text-xs">
 												{producto.quantity}
 											</td>
-											<td className=" w-2/12 text-center text-primary text-lg font-bold tablet:text-sm cel:text-xs">
+											<td className=" w-2/12 text-center text-lg font-bold tablet:text-sm cel:text-xs">
 												$ {precioTotal}
 											</td>
 											<td className=" w-1/12 text-center">
@@ -67,13 +77,26 @@ const Cart = () => {
 				)}
 			</div>
 			{cart.length !== 0 ? (
-				<div className="mt-2">
-					<button
-						onClick={clear}
-						className="bg-rosa text-blanco py-1 px-3 rounded-3xl text-sm uppercase hover:bg-rosaFuerte"
-					>
-						Vaciar carrito
-					</button>
+				<div className="flex justify-between items-end w-10/12">
+					<div className="mt-2">
+						<button
+							onClick={clear}
+							className="bg-rosa text-blanco py-1 px-3 rounded-3xl text-sm uppercase hover:bg-rosaFuerte"
+						>
+							Vaciar carrito
+						</button>
+					</div>
+					<div>
+						<div>Subtotal: $ {totalPrice.toFixed(2)}</div>
+						<div className="mt-2 text-center">
+							<button
+								onClick={handleCheckout}
+								className="bg-rosa text-blanco py-1 px-3 rounded-3xl text-sm uppercase hover:bg-rosaFuerte"
+							>
+								Ir a pagar
+							</button>
+						</div>
+					</div>
 				</div>
 			) : null}
 		</div>
