@@ -1,10 +1,17 @@
 import React from 'react';
+import ItemListContainer from '../../containers/ItemListContainer';
+import Banner from '../../assets/banner.png';
 
 const Home = () => {
 	return (
-		<div className="flex justify-center items-center uppercase text-4xl p-10">
-			Home
-		</div>
+		<>
+			<img
+				src={Banner}
+				alt="banner"
+				className="w-full h-5/6 tablet:h-3/6 cel:h-2/6"
+			/>
+			<ItemListContainer />
+		</>
 	);
 };
 

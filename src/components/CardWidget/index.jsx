@@ -15,7 +15,7 @@ const CardWidget = () => {
 	return (
 		<div className="flex">
 			<svg
-				className="w-6 h-6 ml-2 cursor-pointer"
+				className="w-6 h-6 mx-auto cursor-pointer"
 				fill="none"
 				stroke="currentColor"
 				viewBox="0 0 24 24"

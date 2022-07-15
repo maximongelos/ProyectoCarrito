@@ -24,7 +24,7 @@ const ItemDetail = ({product}) => {
 	};
 
 	return (
-		<div className="flex justify-end items-end  w-4/5 mx-0 my-auto pt-6 tablet:flex-col tablet:justify-center tablet:items-center tablet:w-full cel:flex-col cel:justify-center cel:items-center cel:w-full">
+		<div className="flex justify-center items-center  w-full mx-0 my-auto pt-6 tablet:flex-col tablet:justify-center tablet:items-center tablet:w-full cel:flex-col cel:justify-center cel:items-center cel:w-full">
 			<div className="w-2/5 items-center p-6 tablet:w-6/12 cel:w-3/4">
 				<img
 					src={product.image}
@@ -33,14 +33,15 @@ const ItemDetail = ({product}) => {
 					cel:w-full cel:h-64 cel:items-center"
 				/>
 			</div>
-			<div className="flex flex-col justify-start items-start mx-0 my-7  w-2/5 tablet:justify-center tablet:items-center tablet:w-full cel:justify-center cel:items-center cel:w-full">
-				<h3 className="w-10/12 uppercase pb-3 tablet:text-center cel:text-center">
-					{product.title}
-				</h3>
-				<p className="w-10/12 text-base text-justify pb-3 tablet:text-center cel:text-center">
+			<div className="flex flex-col justify-start items-start mx-0  w-2/5 tablet:justify-center tablet:items-center tablet:w-full tablet:my-7  cel:justify-center cel:items-center cel:w-full cel:my-7 ">
+				<h4 className="w-10/12 uppercase pb-3 text-negro tablet:text-center cel:text-center">
+					{product.category}
+				</h4>
+				<h1 className="text-base">{product.title}</h1>
+				<h3 className="w-10/12 text-sm text-justify font-bold my-3 tablet:text-center cel:text-center">
 					$ {product.price}
-				</p>
-				<p className="w-10/12 text-base text-justify pb-3 tablet:text-center cel:text-center">
+				</h3>
+				<p className="w-10/12 text-sm text-justify pb-3 tablet:text-center cel:text-center">
 					{product.description}
 				</p>
 				{!qtyAdded ? (

@@ -12,52 +12,58 @@ const Cart = () => {
 					Detalle de su compra
 				</h4>
 			</div>
-			<div className="w-11/12  p-2 mt-2">
+			<div className="w-11/12 p-2 mt-2 ">
 				{cart.length === 0 ? (
 					<p className="text-center font-light text-lg pt-2">No hay compras</p>
 				) : (
-					<ul className="p-4 border rounded-md">
-						{cart.map((producto) => {
-							return (
-								<div class="flex justify-center items-center w-full">
-									<div class="w-2/12">
-										<img
-											src={producto.image}
-											className="w-20 flex-shrink-0 tablet:w-16 cel:w-14"
-											alt={producto.title}
-										/>
-									</div>
-
-									<div class="w-1/5">
-										<h2 class="text-gray-800 mb-1 text-lg font-normal uppercase justify tablet:text-sm cel:text-xs">
-											{producto.title}
-										</h2>
-									</div>
-
-									<div class="w-1/5">
-										<p class="text-primary text-lg font-bold tablet:text-sm cel:text-xs">
-											${producto.price}
-										</p>
-									</div>
-
-									<div class="w-1/5">
-										<p class="text-primary text-lg font-bold tablet:text-sm cel:text-xs">
-											Cantidad: {producto.quantity}
-										</p>
-									</div>
-
-									<div class="w-1/5">
-										<button
-											onClick={() => removeItem(producto.id)}
-											className="bg-rosa text-blanco py-1 px-3 rounded-3xl text-sm uppercase hover:bg-rosaFuerte"
-										>
-											Eliminar
-										</button>
-									</div>
-								</div>
-							);
-						})}
-					</ul>
+					<>
+						<hr className=" mb-4" />
+						<table className="w-full">
+							<thead>
+								<tr>
+									<th></th>
+									<th>Articulo</th>
+									<th>Cantidad</th>
+									<th>Precio</th>
+									<th></th>
+								</tr>
+							</thead>
+							<tbody>
+								{cart.map((producto) => {
+									let precioTotal = producto.price * producto.quantity;
+									return (
+										<tr>
+											<td className="w-1/12 text-center">
+												<img
+													src={producto.image}
+													className="w-16 tablet:w-16 cel:w-14"
+													alt={producto.title}
+												/>
+											</td>
+											<td className=" w-2/12 text-center text-gray-800 mb-1 text-lg font-normal uppercase justify tablet:text-sm cel:text-xs">
+												{producto.title}
+											</td>
+											<td className=" w-2/12 text-center text-primary text-lg font-bold tablet:text-sm cel:text-xs">
+												{producto.quantity}
+											</td>
+											<td className=" w-2/12 text-center text-primary text-lg font-bold tablet:text-sm cel:text-xs">
+												$ {precioTotal}
+											</td>
+											<td className=" w-1/12 text-center">
+												<button
+													onClick={() => removeItem(producto.id)}
+													className="bg-rosa text-blanco py-1 px-3 rounded-3xl text-sm uppercase hover:bg-rosaFuerte"
+												>
+													Eliminar
+												</button>
+											</td>
+										</tr>
+									);
+								})}
+							</tbody>
+						</table>
+						<hr className=" mt-4" />
+					</>
 				)}
 			</div>
 			{cart.length !== 0 ? (
@@ -76,22 +82,46 @@ const Cart = () => {
 
 export default Cart;
 
-/* <li
-								key={producto.id}
-								className="flex justify-start items-center p-3"
-							>
-								<img
-									src={producto.image}
-									className=" w-20 h-20 pr-4"
-									alt={producto.title}
-								/>
-								<p className="pr-4">{producto.title}</p>
-								<p className="pr-4">Cantidad: {producto.quantity}</p>
-								<p className="pr-4">Precio: ${producto.price}</p>
-								<button
-									onClick={() => removeItem(producto.id)}
-									className="bg-rosa text-blanco py-1 px-3 rounded-3xl text-sm uppercase hover:bg-rosaFuerte"
-								>
-									Eliminar
-								</button>
-							</li> */
+/* <ul className="p-4 border rounded-md">
+	{cart.map((producto) => {
+		let precioTotal = producto.price * producto.quantity;
+		return (
+			<div class="flex justify-between items-center w-full justify tablet:text-xs cel:text-xs">
+				<div>
+					<img
+						src={producto.image}
+						className="w-20 flex-shrink-0 tablet:w-16 cel:w-14"
+						alt={producto.title}
+					/>
+				</div>
+
+				<div>
+					<h2 class="text-gray-800 mb-1 text-lg font-normal uppercase justify tablet:text-sm cel:text-xs">
+						{producto.title.substring(0, 12)}
+					</h2>
+				</div>
+
+				<div>
+					<p class="text-primary text-lg font-bold tablet:text-sm cel:text-xs">
+						${precioTotal}
+					</p>
+				</div>
+
+				<div>
+					<p class="text-primary text-lg font-bold tablet:text-sm cel:text-xs">
+						Cantidad: {producto.quantity}
+					</p>
+				</div>
+
+				<div>
+					<button
+						onClick={() => removeItem(producto.id)}
+						className="bg-rosa text-blanco py-1 px-3 rounded-3xl text-sm uppercase hover:bg-rosaFuerte"
+					>
+						Eliminar
+					</button>
+				</div>
+			</div>
+		);
+	})}
+</ul> */

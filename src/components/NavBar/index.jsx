@@ -45,9 +45,21 @@ const NavBar = () => {
 							Contacto
 						</Link>
 					</div>
-					<div>
-						<CardWidget />
-					</div>
+				</div>
+				<div className="flex justify-center items-center mr-4 tablet:hidden cel:hidden">
+					<Link
+						to="/login"
+						className=" font-normal p-2 uppercase hover:text-gris"
+					>
+						Login
+					</Link>
+					<Link
+						to="/register"
+						className=" font-normal p-2 uppercase hover:text-gris"
+					>
+						Registrate
+					</Link>
+					<CardWidget />
 				</div>
 			</nav>
 		</>

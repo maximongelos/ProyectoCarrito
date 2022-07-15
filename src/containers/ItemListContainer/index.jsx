@@ -8,6 +8,7 @@ import {useNavigate, useParams} from 'react-router-dom';
 const ItemListContainer = () => {
 	const [productos, setProductos] = useState([]);
 	const [categorias, setCategorias] = useState([]);
+	const [loading, setLoading] = useState(false);
 
 	const navigate = useNavigate();
 
@@ -22,8 +23,10 @@ const ItemListContainer = () => {
 
 		const getCategorias = async () => {
 			try {
+				setLoading(true);
 				const res = await fetch(url);
 				const data = await res.json();
+				setLoading(false);
 				setCategorias(data);
 			} catch (e) {
 				console.error(e);
@@ -38,6 +41,7 @@ const ItemListContainer = () => {
 
 		const getProductos = async () => {
 			try {
+				setLoading(true);
 				const res = await fetch(url);
 				const data = await res.json();
 
@@ -47,6 +51,7 @@ const ItemListContainer = () => {
 						(producto) => producto.category === params.categoryId
 					);
 				}
+				setLoading(false);
 				setProductos(productosFiltrados);
 			} catch (e) {
 				console.error(e);
@@ -60,18 +65,26 @@ const ItemListContainer = () => {
 		<>
 			<div className="flex flex-col justify-center items-center tracking-wide leading-6">
 				<div className="m-7 flex justify-evenly uppercase container-category">
-					{categorias.map((categoria) => (
-						<div
-							className="text-2xl no-underline relative cursor-pointer text-center text-black p-2.5 tablet:text-lg cel:text-base justify"
-							onClick={() => handleCategory(categoria)}
-							key={categoria}
-						>
-							{categoria}
-						</div>
-					))}
+					{!loading ? (
+						categorias.map((categoria) => (
+							<div
+								className="text-2xl no-underline relative cursor-pointer text-center text-black p-2.5 tablet:text-lg cel:text-xs justify"
+								onClick={() => handleCategory(categoria)}
+								key={categoria}
+							>
+								{categoria}
+							</div>
+						))
+					) : (
+						<p>Cargando...</p>
+					)}
 				</div>
 
-				{productos.length ? <ItemList productos={productos} /> : <Spinner />}
+				{productos.length && !loading ? (
+					<ItemList productos={productos} />
+				) : (
+					<Spinner />
+				)}
 			</div>
 		</>
 	);
