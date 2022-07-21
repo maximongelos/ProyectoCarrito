@@ -10,8 +10,6 @@ const ItemDetail = ({product}) => {
 
 	const {addItem} = useContext(Shop);
 
-	product.stock = 10;
-
 	const [qtyAdded, setQtyAdded] = useState(0);
 
 	const handleConfirm = (qty) => {

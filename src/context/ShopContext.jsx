@@ -16,6 +16,7 @@ const ShopProvider = ({children}) => {
 		if (productoRepetido) {
 			productoRepetido.quantity += cantidad;
 			productoRepetido.stock -= cantidad;
+
 			setCart([...cart]);
 		} else {
 			producto.stock -= cantidad;

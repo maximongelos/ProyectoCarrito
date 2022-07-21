@@ -13,8 +13,12 @@ const Cart = () => {
 		navigate('/checkout');
 	};
 
+	const handleProducts = () => {
+		navigate('/productos');
+	};
+
 	return (
-		<div className="flex flex-col justify-center items-center w-full">
+		<div className="flex flex-col justify-center items-center w-full text-center">
 			<div>
 				<h4 className="text-center uppercase font-extrabold text-2xl pt-2">
 					Detalle de su compra
@@ -22,10 +26,20 @@ const Cart = () => {
 			</div>
 			<div className="w-11/12 p-2 mt-2 ">
 				{cart.length === 0 ? (
-					<p className="text-center font-light text-lg pt-2">No hay compras</p>
+					<>
+						<p className="text-center font-light text-lg pt-2 underline underline-offset-1">
+							No hay compras
+						</p>
+						<button
+							onClick={handleProducts}
+							className="bg-rosa text-blanco py-3 px-6 mt-10  rounded-3xl text-sm uppercase hover:bg-rosaFuerte"
+						>
+							Ir a productos
+						</button>
+					</>
 				) : (
 					<>
-						<hr className=" mb-4" />
+						<hr className="mb-4" />
 						<table className="w-full">
 							<thead>
 								<tr>
@@ -42,7 +56,7 @@ const Cart = () => {
 									precioFinal += precioTotal;
 									setTotalPrice(precioFinal);
 									return (
-										<tr>
+										<tr key={producto.id}>
 											<td className="w-1/12 text-center">
 												<img
 													src={producto.image}

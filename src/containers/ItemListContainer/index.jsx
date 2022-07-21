@@ -4,6 +4,8 @@ import ItemList from '../../components/ItemList';
 import './style.css';
 import Spinner from '../../components/Spinner';
 import {useNavigate, useParams} from 'react-router-dom';
+import {collection, getDocs} from 'firebase/firestore';
+import {db} from '../../components/firebase/config';
 
 const ItemListContainer = () => {
 	const [productos, setProductos] = useState([]);
@@ -19,33 +21,19 @@ const ItemListContainer = () => {
 	};
 
 	useEffect(() => {
-		const url = 'https://fakestoreapi.com/products/categories';
-
-		const getCategorias = async () => {
-			try {
-				setLoading(true);
-				const res = await fetch(url);
-				const data = await res.json();
-				setLoading(false);
-				setCategorias(data);
-			} catch (e) {
-				console.error(e);
-			}
-		};
-
-		getCategorias();
-	}, []);
-
-	useEffect(() => {
-		const url = 'https://fakestoreapi.com/products';
-
 		const getProductos = async () => {
 			try {
 				setLoading(true);
-				const res = await fetch(url);
-				const data = await res.json();
+				const querySnapshot = await getDocs(collection(db, 'products'));
+				let productosFiltrados = [];
+				let categoria = new Set();
+				querySnapshot.forEach((doc) => {
+					productosFiltrados.push({id: doc.id, ...doc.data()});
+					categoria.add(doc.data().category);
+				});
 
-				let productosFiltrados = [...data];
+				const categorias = Array.from(categoria);
+
 				if (params?.categoryId) {
 					productosFiltrados = productosFiltrados.filter(
 						(producto) => producto.category === params.categoryId
@@ -53,6 +41,7 @@ const ItemListContainer = () => {
 				}
 				setLoading(false);
 				setProductos(productosFiltrados);
+				setCategorias(categorias);
 			} catch (e) {
 				console.error(e);
 			}
