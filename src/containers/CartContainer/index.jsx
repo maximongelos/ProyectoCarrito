@@ -2,6 +2,8 @@ import React from 'react';
 import {useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Shop} from '../../context/ShopContext';
+import generateOrder from '../../components/utils/generarOrden';
+import guardarOrden from '../../components/utils/guardarOrden';
 
 const Cart = () => {
 	const {cart, removeItem, clear, setTotalPrice, totalPrice} = useContext(Shop);
@@ -9,7 +11,18 @@ const Cart = () => {
 
 	const navigate = useNavigate();
 
-	const handleCheckout = (precioTotal) => {
+	const handleCheckout = async () => {
+		const newOrder = generateOrder(
+			'Maximiliano',
+			'3416579865',
+			'maximongelos@gmail.com',
+			'Riccheri 1199 4 A',
+			cart,
+			totalPrice
+		);
+
+		guardarOrden(cart, newOrder);
+
 		navigate('/checkout');
 	};
 
@@ -54,7 +67,7 @@ const Cart = () => {
 								{cart.map((producto) => {
 									let precioTotal = producto.price * producto.quantity;
 									precioFinal += precioTotal;
-									setTotalPrice(precioFinal);
+									setTotalPrice(precioFinal.toFixed(2));
 									return (
 										<tr key={producto.id}>
 											<td className="w-1/12 text-center">
@@ -101,7 +114,7 @@ const Cart = () => {
 						</button>
 					</div>
 					<div>
-						<div>Subtotal: $ {totalPrice.toFixed(2)}</div>
+						<div>Subtotal: $ {totalPrice}</div>
 						<div className="mt-2 text-center">
 							<button
 								onClick={handleCheckout}
