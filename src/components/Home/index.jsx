@@ -1,6 +1,6 @@
 import React from 'react';
 import ItemListContainer from '../../containers/ItemListContainer';
-import Banner from '../../assets/banner.png';
+import Banner from '../../assets/banner.jpg';
 
 const Home = () => {
 	return (
@@ -8,8 +8,9 @@ const Home = () => {
 			<img
 				src={Banner}
 				alt="banner"
-				className="w-full h-5/6 tablet:h-3/6 cel:h-2/6"
+				className=" w-screen tablet:h-3/6 cel:h-2/6"
 			/>
+
 			<ItemListContainer />
 		</>
 	);

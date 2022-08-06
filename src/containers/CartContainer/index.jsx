@@ -2,8 +2,6 @@ import React from 'react';
 import {useContext} from 'react';
 import {useNavigate} from 'react-router-dom';
 import {Shop} from '../../context/ShopContext';
-import generateOrder from '../../components/utils/generarOrden';
-import guardarOrden from '../../components/utils/guardarOrden';
 
 const Cart = () => {
 	const {cart, removeItem, clear, setTotalPrice, totalPrice} = useContext(Shop);
@@ -12,17 +10,6 @@ const Cart = () => {
 	const navigate = useNavigate();
 
 	const handleCheckout = async () => {
-		const newOrder = generateOrder(
-			'Maximiliano',
-			'3416579865',
-			'maximongelos@gmail.com',
-			'Riccheri 1199 4 A',
-			cart,
-			totalPrice
-		);
-
-		guardarOrden(cart, newOrder);
-
 		navigate('/checkout');
 	};
 

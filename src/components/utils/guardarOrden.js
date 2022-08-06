@@ -1,5 +1,5 @@
 import {collection, addDoc, writeBatch, getDoc, doc} from 'firebase/firestore';
-import {db} from '../../components/firebase/config';
+import {db} from '../firebase/config';
 
 const guardarOrden = async (cart, orden) => {
 	const batch = writeBatch(db);

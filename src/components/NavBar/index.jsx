@@ -5,6 +5,7 @@ import {IoIosMenu} from 'react-icons/io';
 import CardWidget from '../CardWidget';
 
 const NavBar = () => {
+	const [navbarOpen, setNavbarOpen] = React.useState(false);
 	return (
 		<>
 			<nav className="flex justify-between items-center bg-rosa text-black relative shadow-sm uppercase">
@@ -15,10 +16,13 @@ const NavBar = () => {
 						alt="logo"
 					/>
 				</Link>
-				<div className=" px-4 cursor-pointer desktop:hidden">
+				<div
+					className=" px-4 cursor-pointer desktop:hidden"
+					onClick={() => setNavbarOpen(!navbarOpen)}
+				>
 					<IoIosMenu className=" h-10 w-10" />
 				</div>
-				<div className="flex justify-between pr-8 tablet:hidden cel:hidden">
+				<div className="justify-between pr-8 tablet:hidden cel:hidden">
 					<div>
 						<Link to="/" className=" font-normal p-2 uppercase hover:text-gris">
 							Inicio
@@ -58,6 +62,12 @@ const NavBar = () => {
 						className=" font-normal p-2 uppercase hover:text-gris"
 					>
 						Registrate
+					</Link>
+					<Link
+						to="/admin"
+						className=" font-normal p-2 uppercase hover:text-gris"
+					>
+						Admin
 					</Link>
 					<CardWidget />
 				</div>
