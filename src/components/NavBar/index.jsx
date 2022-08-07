@@ -1,79 +1,114 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import logo from '../../assets/DuoShowRooom.png';
 import {IoIosMenu} from 'react-icons/io';
+import {GrFormClose} from 'react-icons/gr';
+import logo from '../../assets/DuoShowRooom.png';
 import CardWidget from '../CardWidget';
 
-const NavBar = () => {
+export default function Navbar({fixed}) {
 	const [navbarOpen, setNavbarOpen] = React.useState(false);
 	return (
 		<>
-			<nav className="flex justify-between items-center bg-rosa text-black relative shadow-sm uppercase">
-				<Link to="/" className="flex items-center">
-					<img
-						className="h-20 mr-2.5 tablet:h-24 cel:h-24"
-						src={logo}
-						alt="logo"
-					/>
-				</Link>
-				<div
-					className=" px-4 cursor-pointer desktop:hidden"
-					onClick={() => setNavbarOpen(!navbarOpen)}
-				>
-					<IoIosMenu className=" h-10 w-10" />
-				</div>
-				<div className="justify-between pr-8 tablet:hidden cel:hidden">
-					<div>
-						<Link to="/" className=" font-normal p-2 uppercase hover:text-gris">
-							Inicio
+			<nav className="relative flex flex-wrap items-center justify-between px-2 py-3 bg-rosa mb-3">
+				<div className="w-full px-4 mx-auto flex flex-wrap items-center justify-between">
+					<div className="w-full relative flex justify-between desktop:w-auto desktop:static desktop:block desktop:justify-start">
+						<Link to="/" className="flex items-center">
+							<img
+								className="h-20 mr-2.5 tablet:h-24 cel:h-24"
+								src={logo}
+								alt="logo"
+							/>
 						</Link>
-
-						<Link
-							to="/nosotros"
-							className=" font-normal p-2 uppercase hover:text-gris"
+						<button
+							className="text-white cursor-pointer text-xl leading-none px-3 py-1  border-transparent rounded bg-transparent block desktop:hidden outline-none focus:outline-none"
+							type="button"
+							onClick={() => setNavbarOpen(!navbarOpen)}
 						>
-							Nosotros
-						</Link>
-
-						<Link
-							to="/productos"
-							className=" font-normal p-2 uppercase hover:text-gris"
-						>
-							Productos
-						</Link>
-
-						<Link
-							to="/contacto"
-							className=" font-normal p-2 uppercase hover:text-gris"
-						>
-							Contacto
-						</Link>
+							{!navbarOpen ? (
+								<IoIosMenu className=" h-10 w-10" />
+							) : (
+								<GrFormClose className=" h-10 w-10" />
+							)}
+						</button>
 					</div>
-				</div>
-				<div className="flex justify-center items-center mr-4 tablet:hidden cel:hidden">
-					<Link
-						to="/login"
-						className=" font-normal p-2 uppercase hover:text-gris"
+					<div
+						className={
+							'desktop:flex flex-grow-0 items-center' +
+							(navbarOpen ? ' flex' : ' hidden')
+						}
+						id="example-navbar-danger"
 					>
-						Login
-					</Link>
-					<Link
-						to="/register"
-						className=" font-normal p-2 uppercase hover:text-gris"
+						<ul className="flex flex-col desktop:flex-row list-none desktop:ml-auto">
+							<li
+								className="nav-item tablet:gap-2 cel:gap-2"
+								onClick={() => setNavbarOpen(!navbarOpen)}
+							>
+								<Link
+									to="/"
+									className=" font-normal p-2 uppercase hover:text-gris"
+								>
+									Inicio
+								</Link>
+							</li>
+							<li
+								className="nav-item"
+								onClick={() => setNavbarOpen(!navbarOpen)}
+							>
+								<Link
+									to="/nosotros"
+									className=" font-normal p-2 uppercase hover:text-gris"
+								>
+									Nosotros
+								</Link>
+							</li>
+							<li
+								className="nav-item"
+								onClick={() => setNavbarOpen(!navbarOpen)}
+							>
+								<Link
+									to="/productos"
+									className=" font-normal p-2 uppercase hover:text-gris"
+								>
+									Productos
+								</Link>
+							</li>
+							<li
+								className="nav-item"
+								onClick={() => setNavbarOpen(!navbarOpen)}
+							>
+								<Link
+									to="/contacto"
+									className=" font-normal p-2 uppercase hover:text-gris"
+								>
+									Contacto
+								</Link>
+							</li>
+						</ul>
+					</div>
+					<div
+						className={
+							'desktop:flex flex-grow-0 items-center' +
+							(navbarOpen ? ' flex' : ' hidden')
+						}
 					>
-						Registrate
-					</Link>
-					<Link
-						to="/admin"
-						className=" font-normal p-2 uppercase hover:text-gris"
-					>
-						Admin
-					</Link>
-					<CardWidget />
+						<div className="flex items-center desktop:order-2">
+							<Link
+								to="/login"
+								className="dark:text-negro hover:bg-gris focus:ring-4 focus:ring-gris font-medium rounded-lg text-normal p-2 desktop:px-5 desktop:py-2.5 mr-1 desktop:mr-2 dark:hover:bg-gris focus:outline-none dark:focus:ring-gris uppercase"
+							>
+								Login
+							</Link>
+							<Link
+								to="/admin"
+								className="dark:text-negro hover:bg-gris focus:ring-4 focus:ring-gris font-medium rounded-lg text-normal p-2 desktop:px-5 desktop:py-2.5 mr-1 desktop:mr-2 dark:hover:bg-gris focus:outline-none dark:focus:ring-gris uppercase"
+							>
+								Admin
+							</Link>
+							<CardWidget />
+						</div>
+					</div>
 				</div>
 			</nav>
 		</>
 	);
-};
-
-export default NavBar;
+}
