@@ -1,3 +1,14 @@
-Proyecto de React - E-commerce comision 37075
+# DÚO Showroom
 
-Tienda virtual para showroom dedicado a la venta de indumentaria.
+#### Proyecto realizado para el curso de ReactJS. Permite navegación entre distintas categorias, acceso a cada producto para conocerlo con mayor detalle y su posterior compra.
+
+## Deploy 🚀
+
+## Construido con 🛠️
+
+- React
+- Firebase
+- Tailwind CSS
+- React-router-dom
+- React-icons
+- SweetAlert2
