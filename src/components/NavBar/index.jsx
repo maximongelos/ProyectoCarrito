@@ -19,6 +19,7 @@ export default function Navbar({fixed}) {
 								alt="logo"
 							/>
 						</Link>
+
 						<button
 							className="text-white cursor-pointer text-xl leading-none px-3 py-1  border-transparent rounded bg-transparent block desktop:hidden outline-none focus:outline-none"
 							type="button"
@@ -31,6 +32,7 @@ export default function Navbar({fixed}) {
 							)}
 						</button>
 					</div>
+
 					<div
 						className={
 							'desktop:flex flex-grow-0 items-center' +
@@ -38,7 +40,7 @@ export default function Navbar({fixed}) {
 						}
 						id="example-navbar-danger"
 					>
-						<ul className="flex flex-col tablet:gap-3 cel:gap-3 tablet:p-3 cel:p-3 desktop:flex-row list-none desktop:ml-auto">
+						<ul className="flex flex-col tablet:gap-3 cel:gap-3 tablet:p-3 cel:p-3 desktop:flex-row list-none text-center desktop:ml-auto">
 							<li
 								className="nav-item tablet:gap-2 cel:gap-2"
 								onClick={() => setNavbarOpen(!navbarOpen)}

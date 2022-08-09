@@ -82,7 +82,7 @@ const Admin = () => {
 						</ul>
 					</div>
 				</div>
-				<div className="h-screen flex-1 p-5 pt-8">
+				<div className="w-full h-screen flex-1 p-5 pt-8">
 					{mostrarFormulario ? <CreateProduct /> : null}
 					{productos ? <ShowProducts productos={productos} /> : null}
 					{ordenes ? <ShowOrders ordenes={ordenes} /> : null}
