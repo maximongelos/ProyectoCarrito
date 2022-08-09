@@ -1,5 +1,5 @@
 import {addDoc, collection} from 'firebase/firestore';
-import {db} from '../firebase/config';
+import {db} from '../components/firebase/config';
 
 const guardarProducto = async (nuevoProducto) => {
 	console.log(nuevoProducto);

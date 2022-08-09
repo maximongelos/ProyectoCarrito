@@ -1,5 +1,5 @@
 import {deleteDoc, doc} from 'firebase/firestore';
-import {db} from '../firebase/config';
+import {db} from '../components/firebase/config';
 
 const eliminarProducto = async (id) => {
 	const productDoc = doc(db, 'products', id);

@@ -2,7 +2,7 @@ import React from 'react';
 import {BiEditAlt} from 'react-icons/bi';
 import {MdDeleteOutline} from 'react-icons/md';
 import {useNavigate} from 'react-router-dom';
-import eliminarProducto from '../Utils/eliminarProducto.js';
+import eliminarProducto from '../../Utils/eliminarProducto';
 
 import Swal from 'sweetalert2';
 import withReactContent from 'sweetalert2-react-content';
