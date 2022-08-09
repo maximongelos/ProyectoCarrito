@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import getCollection from '../../components/Utils/getCollections';
+import getCollection from '../../components/Utils/getCollections.js';
 import ShowProducts from '../../components/ShowProducts';
 import ShowOrders from '../../components/ShowOrders';
 import CreateProduct from '../../components/CreateProduct';

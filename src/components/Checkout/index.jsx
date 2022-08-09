@@ -1,6 +1,6 @@
 import React from 'react';
-// import generateOrder from '../../components/Utils/generarOrden';
-// import guardarOrden from '../Utils/guardarOrden';
+import generateOrder from '../Utils/generarOrden.js';
+import guardarOrden from '../Utils/guardarOrden.js';
 import {useContext} from 'react';
 import {Shop} from '../../context/ShopContext';
 import {useState} from 'react';
@@ -25,16 +25,16 @@ const Checkout = () => {
 			return;
 		}
 
-		// const newOrder = generateOrder(
-		// 	nombre,
-		// 	telefono,
-		// 	email,
-		// 	direccion,
-		// 	cart,
-		// 	totalPrice
-		// );
+		const newOrder = generateOrder(
+			nombre,
+			telefono,
+			email,
+			direccion,
+			cart,
+			totalPrice
+		);
 
-		// guardarOrden(cart, newOrder);
+		guardarOrden(cart, newOrder);
 
 		clear();
 

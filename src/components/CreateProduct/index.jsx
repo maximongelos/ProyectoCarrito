@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import guardarProducto from '../Utils/guardarProducto';
-import generateProduct from '../Utils/generarProducto';
+import guardarProducto from '../Utils/guardarProducto.js';
+import generateProduct from '../Utils/generarProducto.js';
 
 const CreateProduct = () => {
 	const [titulo, setTitulo] = useState();
