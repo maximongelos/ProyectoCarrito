@@ -1,5 +1,5 @@
 import React from 'react';
-import generateOrder from '../Utils/generarOrden';
+import generateOrder from '../../components/Utils/generarOrden';
 import guardarOrden from '../Utils/guardarOrden';
 import {useContext} from 'react';
 import {Shop} from '../../context/ShopContext';
